@@ -32,12 +32,12 @@ class LoginActivity : BaseActivity() {
     }
 
 
-    override fun dataProcess(result: LiveDataResult<BaseModel<Any>>, key: String) {
+    override fun onSuccess(result: LiveDataResult<BaseModel<Any>>, key: String) {
 
         Log.e("callback","success")
     }
 
-    override fun loadingProcess(isLoader: Boolean) {
+    override fun onLoading(isLoader: Boolean) {
         if(isLoader){
             Log.e("callback","loading")
         }else{
@@ -46,7 +46,7 @@ class LoginActivity : BaseActivity() {
 
     }
 
-    override fun errorProcess(err: Throwable) {
+    override fun onError(err: Throwable) {
         Log.e("callback","error")
     }
 

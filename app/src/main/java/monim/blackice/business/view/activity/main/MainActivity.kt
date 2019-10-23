@@ -71,7 +71,7 @@ class MainActivity : BaseActivity() {
 
     }
 
-    override fun dataProcess(result: LiveDataResult<BaseModel<Any>>, key: String) {
+    override fun onSuccess(result: LiveDataResult<BaseModel<Any>>, key: String) {
 
 
         val moshi = Moshi.Builder().build()
@@ -95,7 +95,7 @@ class MainActivity : BaseActivity() {
     }
 
 
-    override fun loadingProcess(isLoader: Boolean) {
+    override fun onLoading(isLoader: Boolean) {
         if(isLoader){
             Log.e("callback","loading")
         }else{
@@ -104,7 +104,7 @@ class MainActivity : BaseActivity() {
 
     }
 
-    override fun errorProcess(err: Throwable) {
+    override fun onError(err: Throwable) {
         Log.e("callback","error")
     }
 

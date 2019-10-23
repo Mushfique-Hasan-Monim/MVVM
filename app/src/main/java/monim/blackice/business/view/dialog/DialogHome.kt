@@ -42,15 +42,15 @@ class DialogHome : BaseDialogFragment() {
 
     }
 
-    override fun dataProcess(result: LiveDataResult<BaseModel<Any>>, key: String) {
+    override fun onSuccess(result: LiveDataResult<BaseModel<Any>>, key: String) {
 
     }
 
-    override fun loadingProcess(isLoader: Boolean) {
+    override fun onLoading(isLoader: Boolean) {
 
     }
 
-    override fun errorProcess(err: Throwable) {
+    override fun onError(err: Throwable) {
 
     }
 
