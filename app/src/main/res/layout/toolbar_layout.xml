@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize">
+
+        <ImageView
+                android:visibility="gone"
+                android:id="@+id/drawerNavigationIcon"
+                android:src="@drawable/menu"
+                android:layout_marginLeft="10dp"
+                android:tint="@color/colorAccent"
+                android:layout_width="40dp"
+                android:paddingTop="@dimen/common"
+                android:paddingBottom="@dimen/common"
+                android:paddingLeft="8dp"
+                android:layout_height="?android:attr/actionBarSize"/>
+        <ImageView
+                android:id="@+id/drawerProfileImage"
+                android:src="@drawable/drawer_icon"
+                android:tint="@color/white"
+                android:layout_width="40dp"
+                android:layout_marginLeft="10dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="8dp"
+                android:layout_height="?android:attr/actionBarSize"/>
+
+        <TextView
+                android:id="@+id/drawerTitle"
+                android:layout_gravity="center_vertical"
+                android:textSize="18dp"
+                android:layout_marginLeft="5dp"
+                android:text="Title"
+                android:textColor="@color/white"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:layout_marginRight="@dimen/common"
+                android:id="@+id/tvDrawerPoints"
+                android:textSize="18dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="?android:attr/actionBarSize"/>
+<!--
+        <ImageView
+                android:visibility="gone"
+                android:id="@+id/notificationIcon"
+                android:src="@drawable/easy_loyal_notification"
+                android:tint="@color/colorAccent"
+                android:padding="15dp"
+                android:layout_width="50dp"
+                android:layout_height="?android:attr/actionBarSize"/>
+-->
+
+    </LinearLayout>
+
+
+</layout>

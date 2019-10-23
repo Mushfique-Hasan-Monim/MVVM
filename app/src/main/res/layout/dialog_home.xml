@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:custom="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+                name="discount"
+                type="String"/>
+
+        <variable
+                name="collectionAmount"
+                type="String"/>
+
+    </data>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+    android:background="@color/white">
+        <LinearLayout
+                android:id="@+id/llBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+            <TextView
+                    android:text="@{discount}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:text="@{collectionAmount}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+        <Button android:id="@+id/btnOk"
+                android:layout_below="@+id/llBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Okay"
+                android:background="@color/colorAccent"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                android:textAllCaps="false"/>
+    </RelativeLayout>
+
+</layout>
