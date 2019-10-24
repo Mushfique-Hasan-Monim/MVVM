@@ -29,13 +29,13 @@
                 app:layout_constraintTop_toTopOf="@+id/ivCategoryImage" />
 
         <View
-                android:background="@color/hints"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_marginTop="@dimen/common_margin"
+                android:background="@color/hints"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivCategoryImage" />
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <TextView
                 android:id="@+id/textView2"

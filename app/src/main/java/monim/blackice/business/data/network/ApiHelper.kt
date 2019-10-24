@@ -7,7 +7,7 @@ import monim.blackice.business.data.network.api_call_factory.ApiPostCall
 import monim.blackice.business.data.network.api_call_factory.ApiPostCallWithDocument
 import sslwireless.android.easy.loyal.merchant.viewmodel.util.ApiCallbackHelper
 
-class ApiHelper(apiService: IApiService) : IApiHelper {
+class ApiHelper(apiService: IApiService) {
 
 
     val apiService = apiService
@@ -25,7 +25,7 @@ class ApiHelper(apiService: IApiService) : IApiHelper {
     val KEY_USER_NAME = "username"
     val KEY_PASSWORD = "password"
 
-    override fun apiLogin(username: String, password: String, apiCallbackHelper: ApiCallbackHelper) {
+    fun apiLogin(username: String, password: String, apiCallbackHelper: ApiCallbackHelper) {
 
             val hashMap = HashMap<String, String>()
             hashMap.put(KEY_USER_NAME, username)
@@ -33,7 +33,7 @@ class ApiHelper(apiService: IApiService) : IApiHelper {
             getApiCallObservable(CALL_TYPE_POST, ENDPOINT_LOGIN, hashMap).subscribe(apiCallbackHelper)
     }
 
-    override fun apiGetAllCategory(apiCallbackHelper: ApiCallbackHelper) {
+    fun apiGetAllCategory(apiCallbackHelper: ApiCallbackHelper) {
         val hashMap = HashMap<String, String>()
         getApiCallObservable(CALL_TYPE_GET,ENDPOINT_GET_ALL_CATEGORY,hashMap).subscribe(apiCallbackHelper)
     }
