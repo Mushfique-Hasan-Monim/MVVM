@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivArtice"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="15dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="TextView"
+        android:fontFamily="@font/roboto_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivPubllisherImage"
+        android:layout_width="@dimen/circle_image_size"
+        android:layout_height="@dimen/circle_image_size"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivArtice" />
+
+    <TextView
+        android:id="@+id/tvPublisherName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPubllisherImage"
+        app:layout_constraintStart_toEndOf="@+id/ivPubllisherImage"
+        app:layout_constraintTop_toTopOf="@+id/ivPubllisherImage" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="0dp"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivPubllisherImage" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

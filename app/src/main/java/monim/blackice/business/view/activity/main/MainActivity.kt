@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
@@ -20,6 +21,7 @@ import monim.blackice.business.data.model.BaseModel
 import monim.blackice.business.databinding.ActivityMainBinding
 import monim.blackice.business.util.DateUtil
 import monim.blackice.business.util.LiveDataResult
+import monim.blackice.business.view.activity.article.ArticleListActivity
 import monim.blackice.business.view.activity.login.LoginActivity
 import monim.blackice.business.view.adapter.IAdapterListener
 import monim.blackice.business.view.base.BaseActivity
@@ -47,10 +49,11 @@ class MainActivity : BaseActivity() {
         viewModel.fetchGetCategories( this)
 
 
+
     }
     private fun initCategoryRecyclerview(categories:List<Category>){
 
-        rvCategory.layoutManager = LinearLayoutManager(this)
+        rvCategory.layoutManager = GridLayoutManager(this,2)
         rvCategory.adapter = BaseRecyclerAdapter(this,object : IAdapterListener {
             override fun getViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
                 return CategoryViewHolder(
@@ -65,9 +68,13 @@ class MainActivity : BaseActivity() {
             }
 
             override fun <T> clickListener(position: Int, model: T, view: View) {
+                model as Category
+                val intent = Intent(this@MainActivity, ArticleListActivity::class.java)
+                intent.putExtra("id", model.id)
+                startActivity(intent)
 
             }
-        },categories as ArrayList<Category>)
+        },categories as ArrayList)
 
     }
 

@@ -18,10 +18,10 @@ android {
     }
     buildTypes {
         debug {
-            buildConfigField "String", "SERVER_URL", '"http://nurhossen.info/appsHill//api/"'
+            buildConfigField "String", "SERVER_URL", '"http://nurhossen.info/appsHill/api/"'
         }
-        release{
-            buildConfigField "String", "SERVER_URL", '"http://nurhossen.info/appsHill//api/"'
+        release {
+            buildConfigField "String", "SERVER_URL", '"http://nurhossen.info/appsHill/api/"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }

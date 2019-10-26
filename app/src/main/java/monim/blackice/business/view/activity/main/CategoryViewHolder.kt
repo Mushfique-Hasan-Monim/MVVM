@@ -19,10 +19,13 @@ class CategoryViewHolder(itemView: ViewDataBinding, context: Context) :
 
         Glide.with(mContext)
             .load("http://nurhossen.info/appsHill/${itemModel.image}")
-            .apply(RequestOptions.circleCropTransform())
-            .into(binding.ivCategoryImage);
+            .into(binding.ivCategoryImage)
 
         binding.tvCategoryName.setText(itemModel.name)
+
+        binding.root.setOnClickListener {
+            listener.clickListener(position, itemModel, binding.root)
+        }
 
     }
 }

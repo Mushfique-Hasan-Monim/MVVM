@@ -65,15 +65,12 @@ abstract class BaseActivity : AppCompatActivity(), IObserverCallBack {
 
     fun setToolbar(context: Context, toolbar: ToolbarLayoutBinding, title: String, isBackPressed: Boolean) {
         toolbar.drawerTitle.setText(title)
-        toolbar.drawerTitle.setTextColor(resources.getColor(R.color.white))
         if (isBackPressed) {
-            toolbar.drawerProfileImage.isVisible = false
             toolbar.drawerNavigationIcon.isVisible = true
-            toolbar.drawerNavigationIcon.setImageResource(R.drawable.back)
+            toolbar.drawerNavigationIcon.setImageResource(R.drawable.ic_left_arrow)
             toolbar.drawerNavigationIcon.setOnClickListener({ view -> onBackPressed() })
         } else {
             toolbar.drawerNavigationIcon.isVisible = false
-            toolbar.drawerProfileImage.isVisible = true
             toolbar.drawerNavigationIcon.setImageResource(R.drawable.menu)
             toolbar.drawerNavigationIcon.setOnClickListener({ view ->
 
