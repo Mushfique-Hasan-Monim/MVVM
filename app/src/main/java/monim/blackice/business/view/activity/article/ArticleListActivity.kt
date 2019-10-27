@@ -1,5 +1,6 @@
 package monim.blackice.business.view.activity.article
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,6 +17,7 @@ import monim.blackice.business.data.model.ArticleRespons
 import monim.blackice.business.data.model.BaseModel
 import monim.blackice.business.databinding.ActivityArticleListBinding
 import monim.blackice.business.util.LiveDataResult
+import monim.blackice.business.view.activity.article_details.ArticleDetailsActivity
 import monim.blackice.business.view.adapter.IAdapterListener
 import monim.blackice.business.view.base.BaseActivity
 import monim.blackice.business.view.base.BaseRecyclerAdapter
@@ -52,6 +54,10 @@ class ArticleListActivity : BaseActivity() {
         binding.rvArticleList.adapter = BaseRecyclerAdapter(this, object: IAdapterListener{
             override fun <T> clickListener(position: Int, model: T, view: View) {
 
+                model as Article
+                val intent = Intent(this@ArticleListActivity, ArticleDetailsActivity::class.java)
+                intent.putExtra("articleId", model.id)
+                startActivity(intent)
             }
 
             override fun getViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {

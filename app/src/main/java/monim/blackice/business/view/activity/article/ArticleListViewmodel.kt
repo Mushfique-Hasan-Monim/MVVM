@@ -10,7 +10,7 @@ class ArticleListViewmodel(dataManager: DataManager) : BaseViewModel() {
 
     val dataManager = dataManager
 
-    public fun fetchGetArticle(categoryId: Int, lifecycleOwner: LifecycleOwner) {
+    fun fetchGetArticle(categoryId: Int, lifecycleOwner: LifecycleOwner) {
         dataManager.apiHelper.apiGetAllArticles(categoryId, ApiCallbackHelper(livedata(lifecycleOwner,"article")))
     }
 }

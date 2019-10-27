@@ -41,6 +41,10 @@ class ApiHelper(apiService: IApiService) {
         val hashMap = HashMap<String, String>()
         getApiCallObservable(CALL_TYPE_GET,ENDPOINT_GET_ALL_CATEGORY,hashMap).subscribe(apiCallbackHelper)
     }
+    fun apiGetArticleDetails(articleId:String,apiCallbackHelper: ApiCallbackHelper) {
+        val hashMap = HashMap<String, String>()
+        getApiCallObservable(CALL_TYPE_GET,"blog/$articleId/getArticleDetails",hashMap).subscribe(apiCallbackHelper)
+    }
     fun apiGetAllArticles(categoryId:Int, apiCallbackHelper: ApiCallbackHelper) {
         val hashMap = HashMap<String, String>()
         hashMap.put(KEY_CATEGORY_ID, categoryId.toString())
