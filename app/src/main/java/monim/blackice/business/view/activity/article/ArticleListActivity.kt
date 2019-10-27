@@ -8,23 +8,21 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.squareup.moshi.JsonAdapter
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.Types
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import monim.blackice.business.R
 import monim.blackice.business.data.local_db.entity.Article
-import monim.blackice.business.data.local_db.entity.Category
 import monim.blackice.business.data.model.ArticleRespons
 import monim.blackice.business.data.model.BaseModel
-import monim.blackice.business.data.model.user.User
 import monim.blackice.business.databinding.ActivityArticleListBinding
 import monim.blackice.business.util.LiveDataResult
-import monim.blackice.business.view.activity.main.CategoryViewHolder
 import monim.blackice.business.view.adapter.IAdapterListener
 import monim.blackice.business.view.base.BaseActivity
 import monim.blackice.business.view.base.BaseRecyclerAdapter
 import monim.blackice.business.view.base.BaseViewHolder
 import monim.blackice.business.view.base.BaseViewmodelFactory
+import okhttp3.ResponseBody
+import retrofit2.Response
 import java.util.ArrayList
 
 class ArticleListActivity : BaseActivity() {
@@ -72,17 +70,18 @@ class ArticleListActivity : BaseActivity() {
 
     }
 
-    override fun onSuccess(result: LiveDataResult<BaseModel<Any>>, key: String) {
-        val baseData = result.data!!
+    override fun onSuccess(result: LiveDataResult<Response<ResponseBody>>, key: String) {
 
-        val moshi = Moshi.Builder().build()
-        val adapter = moshi.adapter(ArticleRespons::class.java)
+        val articleType = object : TypeToken<BaseModel<ArticleRespons>>() {
 
+        }.type
+        val baseData =
+            Gson().fromJson<BaseModel<ArticleRespons>>(result.data!!.body()!!.string(), articleType)
 
         if (baseData.status) {
 
             if (baseData.data != null) {
-                val articleRespons = adapter.fromJsonValue(baseData.data)
+                val articleRespons = baseData.data
                 initArticle(articleRespons!!.articles)
             }
 

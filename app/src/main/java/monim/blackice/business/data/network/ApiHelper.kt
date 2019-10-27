@@ -1,11 +1,12 @@
 package monim.blackice.business.data.network
 
+import com.google.gson.JsonObject
 import io.reactivex.Maybe
-import monim.blackice.business.data.local_db.entity.Category
-import monim.blackice.business.data.model.BaseModel
 import monim.blackice.business.data.network.api_call_factory.ApiGetCall
 import monim.blackice.business.data.network.api_call_factory.ApiPostCall
 import monim.blackice.business.data.network.api_call_factory.ApiPostCallWithDocument
+import okhttp3.ResponseBody
+import retrofit2.Response
 import sslwireless.android.easy.loyal.merchant.viewmodel.util.ApiCallbackHelper
 
 class ApiHelper(apiService: IApiService) {
@@ -46,7 +47,7 @@ class ApiHelper(apiService: IApiService) {
         getApiCallObservable(CALL_TYPE_POST,"blog/10/0/getAllArticles",hashMap).subscribe(apiCallbackHelper)
     }
 
-    fun <T> getApiCallObservable(callType: String, path: String, hashMap: HashMap<String, T>): Maybe<BaseModel<Any>> {
+    fun <T> getApiCallObservable(callType: String, path: String, hashMap: HashMap<String, T>): Maybe<Response<ResponseBody>> {
         if (callType.equals(CALL_TYPE_GET)) {
             return ApiGetCall().getMaybeObserVable(apiService, path, hashMap!!)
         }

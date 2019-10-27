@@ -7,27 +7,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.squareup.moshi.JsonAdapter
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.Types
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_main.*
 import monim.blackice.business.R
 import monim.blackice.business.data.local_db.entity.Category
 import monim.blackice.business.data.model.BaseModel
+import monim.blackice.business.data.model.user.User
 import monim.blackice.business.databinding.ActivityMainBinding
-import monim.blackice.business.util.DateUtil
 import monim.blackice.business.util.LiveDataResult
 import monim.blackice.business.view.activity.article.ArticleListActivity
-import monim.blackice.business.view.activity.login.LoginActivity
 import monim.blackice.business.view.adapter.IAdapterListener
 import monim.blackice.business.view.base.BaseActivity
 import monim.blackice.business.view.base.BaseRecyclerAdapter
 import monim.blackice.business.view.base.BaseViewHolder
 import monim.blackice.business.view.base.BaseViewmodelFactory
+import okhttp3.ResponseBody
+import retrofit2.Response
 import java.util.ArrayList
 
 class MainActivity : BaseActivity() {
@@ -40,30 +38,34 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        this.viewModel = ViewModelProviders.of(this, BaseViewmodelFactory(MainViewModel(getDataManager()))).get(MainViewModel::class.java)
+        this.viewModel =
+            ViewModelProviders.of(this, BaseViewmodelFactory(MainViewModel(getDataManager())))
+                .get(MainViewModel::class.java)
 
 
     }
 
     override fun viewRelatedTask() {
-        viewModel.fetchGetCategories( this)
-
+        viewModel.fetchGetCategories(this)
 
 
     }
-    private fun initCategoryRecyclerview(categories:List<Category>){
 
-        rvCategory.layoutManager = GridLayoutManager(this,2)
-        rvCategory.adapter = BaseRecyclerAdapter(this,object : IAdapterListener {
+    private fun initCategoryRecyclerview(categories: List<Category>) {
+
+        rvCategory.layoutManager = GridLayoutManager(this, 2)
+        rvCategory.adapter = BaseRecyclerAdapter(this, object : IAdapterListener {
             override fun getViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
                 return CategoryViewHolder(
 
                     DataBindingUtil.inflate(
                         LayoutInflater.from(parent.context)
-                        ,R.layout.item_category
-                        ,parent,false)
+                        , R.layout.item_category
+                        , parent, false
+                    )
 
-                    ,this@MainActivity)
+                    , this@MainActivity
+                )
 
             }
 
@@ -74,23 +76,23 @@ class MainActivity : BaseActivity() {
                 startActivity(intent)
 
             }
-        },categories as ArrayList)
+        }, categories as ArrayList)
 
     }
 
-    override fun onSuccess(result: LiveDataResult<BaseModel<Any>>, key: String) {
+    override fun onSuccess(result: LiveDataResult<Response<ResponseBody>>, key: String) {
+
+        val CategoryType = object : TypeToken<BaseModel<List<Category>>>() {
+
+        }.type
+        val baseData =
+            Gson().fromJson<BaseModel<List<Category>>>(result.data!!.body()!!.string(), CategoryType)
 
 
-        val moshi = Moshi.Builder().build()
-        val typed = Types.newParameterizedType(List::class.java, Category::class.java)
-        val adapter: JsonAdapter<List<Category>> = moshi.adapter(typed)
-
-
-        val baseData = result.data!!
         if (baseData.status) {
 
             if (baseData.data != null) {
-                val categories = adapter.fromJsonValue(baseData.data!!)
+                val categories = baseData.data!!
                 getDataManager().roomHelper.getDatabase().categoryDao().delete()
                 getDataManager().roomHelper.getDatabase().categoryDao().insert(categories!!)
 
@@ -98,23 +100,22 @@ class MainActivity : BaseActivity() {
             }
 
         }
-        Log.e("callback","success")
+        Log.e("callback", "success")
     }
 
 
     override fun onLoading(isLoader: Boolean) {
-        if(isLoader){
-            Log.e("callback","loading")
-        }else{
-            Log.e("callback","stop loading")
+        if (isLoader) {
+            Log.e("callback", "loading")
+        } else {
+            Log.e("callback", "stop loading")
         }
 
     }
 
     override fun onError(err: Throwable) {
-        Log.e("callback","error")
+        Log.e("callback", "error")
     }
-
 
 
 }

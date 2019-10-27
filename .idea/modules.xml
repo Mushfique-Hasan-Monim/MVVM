@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Bangla medium.iml" filepath="$PROJECT_DIR$/Bangla medium.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MVVM.iml" filepath="$PROJECT_DIR$/MVVM.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/appshill-Bangla medium.iml" filepath="$PROJECT_DIR$/appshill-Bangla medium.iml" />
     </modules>
   </component>
 </project>

@@ -1,14 +1,16 @@
 package monim.blackice.business.util
 
 import androidx.lifecycle.Observer
-import monim.blackice.business.data.model.BaseModel
+import com.google.gson.JsonObject
+import okhttp3.ResponseBody
 import retrofit2.HttpException
+import retrofit2.Response
 import java.lang.Exception
 
 class ObserverHelper(iObserverCallBack: IObserverCallBack, key: String) {
 
 
-    var baseObserver = Observer<LiveDataResult<BaseModel<Any>>> { result ->
+    var baseObserver = Observer<LiveDataResult<Response<ResponseBody>>> { result ->
 
         when (result?.status) {
 

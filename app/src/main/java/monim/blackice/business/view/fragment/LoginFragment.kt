@@ -9,9 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.squareup.moshi.JsonAdapter
-import com.squareup.moshi.Moshi
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import monim.blackice.business.R
 import monim.blackice.business.data.model.BaseModel
 import monim.blackice.business.data.model.user.User
@@ -20,6 +19,10 @@ import monim.blackice.business.util.ConstantField
 import monim.blackice.business.util.LiveDataResult
 import monim.blackice.business.view.activity.main.MainActivity
 import monim.blackice.business.view.base.*
+import okhttp3.ResponseBody
+import retrofit2.Response
+
+
 
 class LoginFragment private constructor(): BaseFragment() {
 
@@ -70,21 +73,20 @@ class LoginFragment private constructor(): BaseFragment() {
 
     }
 
-    override fun onSuccess(result: LiveDataResult<BaseModel<Any>>, key: String) {
+    override fun onSuccess(result: LiveDataResult<Response<ResponseBody>>, key: String) {
         when (key) {
             "login" -> {
-                val baseData = result.data!!
+                val userType = object : TypeToken<BaseModel<User>>() {
+
+                }.type
+                val baseData = Gson().fromJson<BaseModel<User>>(result.data!!.body()!!.string(), userType)
 
                 if (baseData.status) {
                     if (baseData.data != null) {
-                        val moshi = Moshi.Builder().build()
-                        val adapter = moshi.adapter(User::class.java)
-                        val user = adapter.fromJsonValue(baseData.data)
+                        val user = baseData.data
 
                         getDataManager().mPref.prefLogin(user!!)
                         activity!!.startActivity(Intent(activity,MainActivity::class.java))
-
-
                     }
 
                 }

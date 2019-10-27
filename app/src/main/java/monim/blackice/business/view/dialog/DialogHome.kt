@@ -6,11 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import com.google.gson.JsonObject
 import monim.blackice.business.R
 import monim.blackice.business.data.model.BaseModel
 import monim.blackice.business.databinding.DialogHomeBinding
 import monim.blackice.business.util.LiveDataResult
 import monim.blackice.business.view.base.BaseDialogFragment
+import okhttp3.ResponseBody
+import retrofit2.Response
 
 class DialogHome : BaseDialogFragment() {
 
@@ -42,7 +45,7 @@ class DialogHome : BaseDialogFragment() {
 
     }
 
-    override fun onSuccess(result: LiveDataResult<BaseModel<Any>>, key: String) {
+    override fun onSuccess(result: LiveDataResult<Response<ResponseBody>>, key: String) {
 
     }
 

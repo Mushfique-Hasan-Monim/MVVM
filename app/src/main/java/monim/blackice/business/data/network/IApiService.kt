@@ -1,10 +1,12 @@
 package monim.blackice.business.data.network
 
+import com.google.gson.JsonObject
 import io.reactivex.Maybe
 import monim.blackice.business.data.model.BaseModel
 import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.*
 
 interface IApiService {
@@ -14,14 +16,14 @@ interface IApiService {
     abstract fun getRequest(
         @Path(value = "url", encoded = true) path: String,
         @QueryMap hashMap: Map<String, String>
-    ): Maybe<BaseModel<Any>>
+    ): Maybe<Response<ResponseBody>>
 
     @FormUrlEncoded
     @POST("{url}")
     abstract fun postRequest(
         @Path(value = "url", encoded = true) path: String,
         @FieldMap hashMap: Map<String, String>
-    ): Maybe<BaseModel<Any>>
+    ): Maybe<Response<ResponseBody>>
 
     @Multipart
     @Headers("Content-Type:multipart/form-data")
@@ -29,7 +31,7 @@ interface IApiService {
     abstract fun sendDocuments(
         @Path(value = "url", encoded = true) path: String,
         @PartMap partMap: Map<String, RequestBody>
-    ): Maybe<BaseModel<Any>>
+    ): Maybe<Response<ResponseBody>>
 
 
     @Headers("Content-Type: application/json")
@@ -37,6 +39,6 @@ interface IApiService {
     abstract fun postRequestForRaw(
         @Path(value = "url", encoded = true) path: String,
         @Body requestBody: RequestBody
-    ): Maybe<Any>
+    ): Maybe<Response<ResponseBody>>
 
 }

@@ -1,9 +1,10 @@
 package monim.blackice.business.util
 
-import monim.blackice.business.data.model.BaseModel
+import okhttp3.ResponseBody
+import retrofit2.Response
 
 interface IObserverCallBack {
-    abstract fun onSuccess(result: LiveDataResult<BaseModel<Any>>, key: String)
-    abstract fun onLoading(isLoader: Boolean)
-    abstract fun onError(err: Throwable)
+    fun onSuccess(result: LiveDataResult<Response<ResponseBody>>, key: String)
+    fun onLoading(isLoader: Boolean)
+    fun onError(err: Throwable)
 }
