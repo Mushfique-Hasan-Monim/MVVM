@@ -21,10 +21,16 @@ class ApiHelper(apiService: IApiService) {
     //endpoint
     val ENDPOINT_LOGIN = "user/login"
     val ENDPOINT_GET_ALL_CATEGORY = "blog/getAllCategories"
+    val ENDPOINT_REGISTRATION = "user/register"
 
     //api method field key
     val KEY_USER_NAME = "username"
     val KEY_PASSWORD = "password"
+
+    val KEY_FULL_NAME = "full_name"
+    val KEY_EMAIL = "email"
+    val KEY_CONFIRM_PASSWORD = "confirm_password"
+    val KEY_USER_TYPE = "user_type"
 
     val KEY_CATEGORY_ID= "category_id"
 
@@ -34,6 +40,17 @@ class ApiHelper(apiService: IApiService) {
             hashMap.put(KEY_USER_NAME, username)
             hashMap.put(KEY_PASSWORD, password)
             getApiCallObservable(CALL_TYPE_POST, ENDPOINT_LOGIN, hashMap).subscribe(apiCallbackHelper)
+    }
+    fun apiRegistration(username: String,fullname: String,email: String, password: String, apiCallbackHelper: ApiCallbackHelper) {
+
+            val hashMap = HashMap<String, String>()
+            hashMap.put(KEY_USER_NAME, username)
+            hashMap.put(KEY_FULL_NAME, fullname)
+            hashMap.put(KEY_EMAIL, email)
+            hashMap.put(KEY_PASSWORD, password)
+            hashMap.put(KEY_CONFIRM_PASSWORD, password)
+            hashMap.put(KEY_USER_TYPE, "general")
+            getApiCallObservable(CALL_TYPE_POST, ENDPOINT_REGISTRATION, hashMap).subscribe(apiCallbackHelper)
     }
 
     fun apiGetAllCategory(apiCallbackHelper: ApiCallbackHelper) {

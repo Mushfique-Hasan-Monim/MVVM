@@ -10,8 +10,20 @@ class RegisterViewmodel(dataManager: DataManager) : BaseViewModel() {
     val dataManager = dataManager
 
 
-    public fun fetchLogin(username: String, password: String, lifecycleOwner: LifecycleOwner) {
-        dataManager.apiHelper.apiLogin(username, password, ApiCallbackHelper(livedata(lifecycleOwner,"login")))
+    public fun fetchRegistration(
+        username: String,
+        fullname: String,
+        email: String,
+        password: String,
+        lifecycleOwner: LifecycleOwner
+    ) {
+        dataManager.apiHelper.apiRegistration(
+            username,
+            fullname,
+            email,
+            password,
+            ApiCallbackHelper(livedata(lifecycleOwner, "registration"))
+        )
     }
 
 }

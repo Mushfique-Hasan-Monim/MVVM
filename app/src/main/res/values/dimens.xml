@@ -7,4 +7,5 @@
     <dimen name="circle_image_size">40dp</dimen>
     <dimen name="article_iv_height">200dp</dimen>
     <dimen name="dialog_iv_height">450dp</dimen>
+    <dimen name="title_top_margin">50dp</dimen>
 </resources>

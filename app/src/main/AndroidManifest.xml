@@ -13,15 +13,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.activity.article_details.ArticleDetailsActivity" />
-        <activity android:name=".view.activity.article.ArticleListActivity" />
-        <activity android:name=".view.activity.login.LoginActivity">
+        <activity android:name=".view.activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+        <activity android:name=".view.activity.article_details.ArticleDetailsActivity" />
+        <activity android:name=".view.activity.article.ArticleListActivity" />
+        <activity
+            android:name=".view.activity.login.LoginActivity"
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity android:name=".view.activity.main.MainActivity" />
     </application>
 

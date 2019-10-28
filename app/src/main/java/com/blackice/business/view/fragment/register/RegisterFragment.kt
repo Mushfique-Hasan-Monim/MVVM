@@ -16,6 +16,7 @@ import com.blackice.business.view.base.BaseFragment
 import com.blackice.business.view.base.BaseViewmodelFactory
 import com.blackice.business.view.fragment.login.LoginFragment
 import okhttp3.ResponseBody
+import org.json.JSONObject
 import retrofit2.Response
 
 class RegisterFragment : BaseFragment() {
@@ -38,13 +39,18 @@ class RegisterFragment : BaseFragment() {
     }
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_register, container, false);
-        this.viewModel = ViewModelProviders.of(this, BaseViewmodelFactory(
-            RegisterViewmodel(
-                getDataManager()
+        this.viewModel = ViewModelProviders.of(
+            this, BaseViewmodelFactory(
+                RegisterViewmodel(
+                    getDataManager()
+                )
             )
-        )
         ).get(RegisterViewmodel::class.java)
         return binding.root
     }
@@ -58,9 +64,57 @@ class RegisterFragment : BaseFragment() {
             loginActivity.addFragment(true, R.id.container, LoginFragment.newInstance("No"))
         }
 
+
+        binding.btnSignup.setOnClickListener {
+
+            if (isValid()) {
+                viewModel.fetchRegistration(
+                    binding.edtUserName.text.toString(),
+                    binding.edtName.text.toString(),
+                    binding.edtEmail.text.toString(),
+                    binding.edtPassword.text.toString(),
+                    this
+                )
+            }
+        }
+
+    }
+
+    private fun isValid(): Boolean {
+
+        var isValid = true
+        if (binding.edtName.text.toString().equals(null) && binding.edtName.text.toString().equals("")) {
+            binding.edtName.setError("Please enter name")
+            isValid = false
+        }
+        if (binding.edtUserName.text.toString().equals(null) && binding.edtUserName.text.toString().equals("")) {
+            binding.edtUserName.setError("Please enter user name")
+            isValid = false
+        }
+        if (binding.edtPassword.text.toString().equals(null) && binding.edtPassword.text.toString().equals("")) {
+            binding.edtPassword.setError("Please enter password")
+            isValid = false
+        }
+        if (binding.edtEmail.text.toString().equals(null) && binding.edtEmail.text.toString().equals("")) {
+            binding.edtEmail.setError("Please enter email")
+            isValid = false
+        }
+        return isValid
     }
 
     override fun onSuccess(result: LiveDataResult<Response<ResponseBody>>, key: String) {
+
+        result.data!!.body()?.let {
+            val jsonObject = JSONObject(result.data!!.body()!!.string())
+            if (jsonObject.get("status") == true) {
+                val loginActivity = activity as LoginActivity
+                loginActivity.addFragment(true, R.id.container, LoginFragment.newInstance("No"))
+            } else {
+                showToast(context!!, jsonObject.get("message").toString())
+            }
+        }?:run{
+            showToast(context!!, "Something wrong")
+        }
 
     }
 
@@ -70,5 +124,6 @@ class RegisterFragment : BaseFragment() {
 
     override fun onError(err: Throwable) {
 
+        showToast(context!!, err.message!!)
     }
 }

@@ -99,6 +99,7 @@ class LoginFragment private constructor(): BaseFragment() {
 
                         getDataManager().mPref.prefLogin(user!!)
                         activity!!.startActivity(Intent(activity,MainActivity::class.java))
+                        activity!!.finish()
                     }
 
                 }
