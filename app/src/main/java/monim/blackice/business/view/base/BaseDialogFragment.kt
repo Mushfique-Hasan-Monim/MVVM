@@ -7,8 +7,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import monim.blackice.business.R
+import monim.blackice.business.data.DataManager
 import monim.blackice.business.util.IObserverCallBack
-import monim.blackice.business.view.dialog.DialogHome
 
 abstract class BaseDialogFragment : DialogFragment(), IObserverCallBack {
 
@@ -16,6 +16,7 @@ abstract class BaseDialogFragment : DialogFragment(), IObserverCallBack {
         super.onActivityCreated(savedInstanceState)
         viewRelatedTask()
     }
+
 
     abstract fun viewRelatedTask()
 
@@ -34,6 +35,10 @@ abstract class BaseDialogFragment : DialogFragment(), IObserverCallBack {
         toast.show()
     }
 
+    fun getDataManager(): DataManager {
+        val application = context as BaseActivity
+        return application.getDataManager()
+    }
 
 
 }

@@ -34,6 +34,7 @@ import monim.blackice.business.view.base.BaseActivity
 import monim.blackice.business.view.base.BaseRecyclerAdapter
 import monim.blackice.business.view.base.BaseViewHolder
 import monim.blackice.business.view.base.BaseViewmodelFactory
+import monim.blackice.business.view.dialog.DialogShowImage
 import okhttp3.ResponseBody
 import retrofit2.Response
 import java.util.ArrayList
@@ -72,6 +73,12 @@ class ArticleDetailsActivity : BaseActivity() {
             }
 
             override fun <T> clickListener(position: Int, model: T, view: View) {
+                model as ArticleDetails
+                when(view.id){
+                    R.id.ivArticleDetails->{
+                        showDialog(true, DialogShowImage.newInstance(model.extended_details))
+                    }
+                }
 
             }
         }, articleDetailsList as ArrayList)

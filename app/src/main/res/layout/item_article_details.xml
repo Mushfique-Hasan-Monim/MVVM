@@ -11,7 +11,7 @@
         android:id="@+id/ivArticleDetails"
         android:layout_width="match_parent"
         android:layout_height="@dimen/article_iv_height"
-        android:layout_marginTop="@dimen/primery_margin"
+        android:layout_marginTop="@dimen/common"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -31,11 +31,15 @@
 
     <TextView
         android:id="@+id/tvArticleDetails"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/primery_margin"
         android:layout_marginTop="@dimen/primery_margin"
+        android:layout_marginEnd="@dimen/primery_margin"
+        android:layout_marginBottom="@dimen/common"
         android:text="Details"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivArticleDetails" />
 

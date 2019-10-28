@@ -5,7 +5,7 @@
     <color name="colorAccent">#00b6c5</color>
     <color name="white">#FFF</color>
     <color name="hints">#E0E0E0</color>
-    <color name="gray">#A9A9A9</color>
+    <color name="gray">#E0E0E0</color>
     <color name="signupColor">#066e8a</color>
     <color name="black">#000</color>
 </resources>

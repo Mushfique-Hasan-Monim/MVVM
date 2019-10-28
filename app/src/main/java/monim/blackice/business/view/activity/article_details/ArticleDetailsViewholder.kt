@@ -33,6 +33,9 @@ class ArticleDetailsViewholder(itemView: ViewDataBinding, context: Context) :
         binding.root.setOnClickListener {
             listener.clickListener(position, itemModel, binding.root)
         }
+        binding.ivArticleDetails.setOnClickListener {
+            listener.clickListener(position, itemModel, binding.ivArticleDetails)
+        }
 
     }
 }

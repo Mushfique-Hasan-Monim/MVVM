@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import monim.blackice.business.R
 import monim.blackice.business.data.DataManager
 import monim.blackice.business.util.IObserverCallBack
-import monim.blackice.business.view.dialog.DialogHome
 
 
 abstract class BaseFragment: Fragment(), IObserverCallBack {
