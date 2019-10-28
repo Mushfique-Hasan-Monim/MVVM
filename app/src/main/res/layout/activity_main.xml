@@ -5,7 +5,7 @@
     <data>
         <variable
                 name="category"
-                type="monim.blackice.business.data.local_db.entity.Category"/>
+                type="com.blackice.business.data.local_db.entity.Category"/>
     <variable
                 name="name"
                 type="String"/>

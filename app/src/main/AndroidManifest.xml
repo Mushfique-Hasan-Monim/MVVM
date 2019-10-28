@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="monim.blackice.business">
+    package="com.blackice.business">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.activity.article_details.ArticleDetailsActivity"></activity>
+        <activity android:name=".view.activity.article_details.ArticleDetailsActivity" />
         <activity android:name=".view.activity.article.ArticleListActivity" />
         <activity android:name=".view.activity.login.LoginActivity">
             <intent-filter>

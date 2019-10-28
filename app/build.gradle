@@ -8,7 +8,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "monim.blackice.business"
+        applicationId "com.blackice.business"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
