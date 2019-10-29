@@ -52,6 +52,7 @@ class MainActivity : BaseActivity() {
 
     private fun initCategoryRecyclerview(categories: List<Category>) {
 
+
         rvCategory.layoutManager = GridLayoutManager(this, 2)
         rvCategory.adapter = BaseRecyclerAdapter(this, object : IAdapterListener {
             override fun getViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
