@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/ivArticleDetails"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/article_iv_height"
+        android:layout_height="@dimen/article_details_iv_height"
         android:layout_marginTop="@dimen/common"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"

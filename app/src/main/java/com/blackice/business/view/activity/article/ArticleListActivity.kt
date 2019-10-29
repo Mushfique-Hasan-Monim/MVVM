@@ -85,12 +85,10 @@ class ArticleListActivity : BaseActivity() {
             Gson().fromJson<BaseModel<ArticleRespons>>(result.data!!.body()!!.string(), articleType)
 
         if (baseData.status) {
-
             if (baseData.data != null) {
                 val articleRespons = baseData.data
                 initArticle(articleRespons!!.articles)
             }
-
         }
         Log.e("callback", "success")
     }

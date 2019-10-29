@@ -31,5 +31,5 @@
         <item name="android:background">@drawable/spinner_icon</item>
     </style>
 
-    <dimen name="text_primary">18sp</dimen>
+
 </resources>

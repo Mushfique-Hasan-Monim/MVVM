@@ -9,6 +9,8 @@ import com.blackice.business.data.local_db.entity.Article
 import com.blackice.business.databinding.ItemArticleBinding
 import com.blackice.business.view.adapter.IAdapterListener
 import com.blackice.business.view.base.BaseViewHolder
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 
 class ArticleViewholder(itemView: ViewDataBinding, context: Context) :
     BaseViewHolder(itemView.root) {
@@ -20,7 +22,8 @@ class ArticleViewholder(itemView: ViewDataBinding, context: Context) :
 
         Glide.with(mContext)
             .load("http://nurhossen.info/appsHill/${itemModel.image}")
-            .apply(RequestOptions.placeholderOf(R.drawable.placeholder))
+            .apply(RequestOptions.placeholderOf(R.drawable.placeholder).transforms( CenterCrop(),RoundedCorners(
+                15)))
             .into(binding.ivArtice)
 
         Glide.with(mContext)
