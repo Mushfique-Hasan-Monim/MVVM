@@ -1,9 +1,14 @@
 package com.blackice.business.util
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.text.*
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
+import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 
@@ -12,6 +17,10 @@ class StringUtil {
     lateinit var ss: SpannableString
     fun addForegroundColorSpan(color: Int, start: Int, end: Int): StringUtil {
         ss.setSpan(ForegroundColorSpan(color), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        return ssu
+    }
+    fun addStyleSpan(style: Int, start: Int, end: Int): StringUtil {
+        ss.setSpan(StyleSpan(style), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         return ssu
     }
 
@@ -23,6 +32,16 @@ class StringUtil {
     fun setMovementMethod(textview: TextView): StringUtil {
         textview.setMovementMethod(LinkMovementMethod.getInstance())
         return ssu
+    }
+
+    fun getClickableSpan(url: String,context: Context): ClickableSpan {
+        return object : ClickableSpan() {
+            override fun onClick(widget: View) {
+                val uri: Uri = Uri.parse(url)
+                val intent = Intent(Intent.ACTION_VIEW, uri)
+                context.startActivity(intent);
+            }
+        }
     }
 
     fun setSpannableString(textview: TextView) {
