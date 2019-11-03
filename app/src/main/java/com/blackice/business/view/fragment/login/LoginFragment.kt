@@ -98,6 +98,8 @@ class LoginFragment private constructor(): BaseFragment() {
                         val user = baseData.data
 
                         getDataManager().mPref.prefLogin(user!!)
+                        val loginActivity = activity as LoginActivity
+                        loginActivity.setDatamanager()
                         activity!!.startActivity(Intent(activity,MainActivity::class.java))
                         activity!!.finish()
                     }

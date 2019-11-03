@@ -108,4 +108,9 @@ abstract class BaseActivity : AppCompatActivity(), IObserverCallBack {
         dialogFragment.show(getSupportFragmentManager().beginTransaction(), "dialog")
     }
 
+    fun setDatamanager(){
+        val myApp = applicationContext as MyApp
+        myApp.setDataManager()
+    }
+
 }
