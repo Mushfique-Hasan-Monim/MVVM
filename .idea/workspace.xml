@@ -10,31 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31d6283d-257a-4ae3-97f5-ee1de2a0092a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/ViewModelKey.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/MyApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/MyApp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/data/DataManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/data/DataManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/AppComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/AppComponent.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/AppModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/AppModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article/ArticleListActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article/ArticleListActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article/ArticleListViewmodel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article/ArticleListViewmodel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article_details/ArticleDetailsViewmodel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article_details/ArticleDetailsViewmodel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/login/LoginViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/login/LoginViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/main/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/main/MainViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseViewmodelFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseViewmodelFactory.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/login/LoginFragmentViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/login/LoginFragmentViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/register/RegisterViewmodel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/register/RegisterViewmodel.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,85 +37,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article/ArticleListViewmodel.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/login/LoginActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="8" column="64" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/login/LoginViewModel.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/main/MainViewModel.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/login/LoginFragmentViewModel.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/data/DataManager.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="10" column="85" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="85" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/register/RegisterViewmodel.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article/ArticleListActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="37" column="59" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="59" />
+            <state relative-caret-position="255">
+              <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/ViewModelKey.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/AppModule.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-              <folding>
-                <element signature="e#34#98#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="219">
+              <caret line="88" column="5" lean-forward="true" selection-start-line="88" selection-start-column="5" selection-end-line="89" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseActivity.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/login/LoginFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+            <state relative-caret-position="122">
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
             </state>
           </provider>
         </entry>
@@ -147,8 +66,62 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseViewmodelFactory.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="7" column="101" selection-start-line="7" selection-start-column="92" selection-end-line="7" selection-end-column="101" />
+            <state relative-caret-position="102">
+              <caret line="9" column="77" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/ViewModelModule.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="53" column="53" selection-start-line="53" selection-start-column="53" selection-end-line="53" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/ViewModelKey.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseViewModel.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="13" column="41" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/login/LoginFragmentViewModel.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="14" column="77" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article/ArticleListActivity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article_details/ArticleDetailsActivity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -158,8 +131,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -184,18 +157,8 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/ActivityModule.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/main/MainActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article_details/ArticleDetailsActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/login/LoginActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/register/RegisterFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/login/LoginFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseDialogFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/data/DataManager.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/AppModule.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/MyApp.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/AppComponent.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseViewModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article/ArticleListViewmodel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article_details/ArticleDetailsViewmodel.kt" />
@@ -203,10 +166,21 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/main/MainViewModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/login/LoginFragmentViewModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/register/RegisterViewmodel.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article/ArticleListActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseViewmodelFactory.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/ViewmodelKey.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/ViewModelKey.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/AppComponent.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/register/RegisterFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/login/LoginFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseDialogFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/main/MainActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/login/LoginActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article_details/ArticleDetailsActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article/ArticleListActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseViewmodelFactory.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/ViewModelModule.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/AppModule.kt" />
       </list>
     </option>
   </component>
@@ -244,107 +218,7 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="business" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MVVM" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="business" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="di" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MVVM" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="business" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MVVM" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="business" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="activity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MVVM" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="business" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="activity" type="462c0819:PsiDirectoryNode" />
-              <item name="article" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MVVM" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="business" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="activity" type="462c0819:PsiDirectoryNode" />
-              <item name="article_details" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MVVM" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="business" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="activity" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MVVM" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="business" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="activity" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MVVM" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="business" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MVVM" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="business" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="dialog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MVVM" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="business" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="fragment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MVVM" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="business" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="fragment" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MVVM" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="business" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="fragment" type="462c0819:PsiDirectoryNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MVVM" type="1abcf292:AndroidViewProjectNode" />
@@ -467,11 +341,11 @@
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Logcat" order="1" weight="0.5609065" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.3427762" />
       <window_info anchor="bottom" id="TODO" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.36827195" />
+      <window_info anchor="bottom" id="Terminal" order="3" visible="true" weight="0.3045326" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="5" visible="true" weight="0.04249292" />
+      <window_info anchor="bottom" id="Build" order="5" weight="0.04249292" />
       <window_info anchor="bottom" id="Android Profiler" order="6" />
       <window_info anchor="bottom" id="Run" order="7" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="8" />
@@ -562,55 +436,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article_details/ArticleDetailsActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/login/LoginActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/main/MainActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/register/RegisterFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/login/LoginFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseDialogFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/dialog/DialogShowImage.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -628,13 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/AppModule.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/MyApp.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -642,24 +460,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/AppComponent.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article/ArticleViewholder.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseViewModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -691,13 +495,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/login/LoginFragmentViewModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/register/RegisterViewmodel.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -719,34 +516,122 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/AppComponent.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/main/CategoryViewHolder.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/register/RegisterFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseDialogFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/main/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="45" column="47" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/login/LoginActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article_details/ArticleDetailsActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/activity/article/ArticleListActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="37" column="59" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="59" />
+        <state relative-caret-position="238">
+          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/login/LoginFragmentViewModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="77" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/fragment/login/LoginFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseViewModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="13" column="41" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/view/base/BaseViewmodelFactory.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="101" selection-start-line="7" selection-start-column="92" selection-end-line="7" selection-end-column="101" />
+        <state relative-caret-position="102">
+          <caret line="9" column="77" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="77" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/ViewModelKey.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding>
-            <element signature="e#34#98#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/ViewModelModule.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="53" column="53" selection-start-line="53" selection-start-column="53" selection-end-line="53" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blackice/business/di/AppModule.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="88" column="5" lean-forward="true" selection-start-line="88" selection-start-column="5" selection-end-line="89" />
         </state>
       </provider>
     </entry>

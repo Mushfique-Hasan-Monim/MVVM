@@ -59,7 +59,6 @@ class AppModule {
         return interceptor
     }
 
-
     @Provides
     @Singleton
     fun provideRetrofit(@NonNull context: Context): Retrofit {
@@ -70,7 +69,6 @@ class AppModule {
             .client(provideOkHttpClient(context))
             .build()
     }
-
 
     @Provides
     @Singleton
@@ -95,6 +93,4 @@ class AppModule {
     fun provideApiHelper(@NonNull apiService: IApiService): ApiHelper {
         return ApiHelper(apiService)
     }
-
-
 }
