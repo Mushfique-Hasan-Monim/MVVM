@@ -7,7 +7,7 @@ import com.blackice.business.data.network.RetrofitFactory
 import com.blackice.business.data.prefence.PreferencesHelper
 import javax.inject.Inject
 
-class DataManager constructor(
+class DataManager @Inject constructor(
     preferencesHelper: PreferencesHelper,roomHelper: RoomHelper, apiHelper: ApiHelper
 ) : IDataManager {
 

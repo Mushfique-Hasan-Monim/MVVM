@@ -32,24 +32,25 @@ import java.util.ArrayList
 import javax.inject.Inject
 
 class ArticleDetailsActivity : BaseActivity() {
-    lateinit var binding : ActivityArticleDetailsBinding
+    lateinit var binding: ActivityArticleDetailsBinding
     lateinit var viewmodel: ArticleDetailsViewmodel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_article_details)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_article_details)
 
-        viewmodel = ViewModelProviders.of(this, BaseViewmodelFactory(ArticleDetailsViewmodel(dataManager))).get(
-            ArticleDetailsViewmodel::class.java)
+        viewmodel = ViewModelProviders.of(this, viewModelFactory).get(
+            ArticleDetailsViewmodel::class.java
+        )
     }
 
     override fun viewRelatedTask() {
-        setToolbar(this, binding.toolbar,"Article Details", true)
-        viewmodel.fetchGetArticleDetails(intent.getStringExtra("articleId"),this)
+        setToolbar(this, binding.toolbar, "Article Details", true)
+        viewmodel.fetchGetArticleDetails(intent.getStringExtra("articleId"), this)
     }
 
-    private fun initArticleDetails(articleDetailsList : List<ArticleDetails>){
+    private fun initArticleDetails(articleDetailsList: List<ArticleDetails>) {
         rvArticleDetails.layoutManager = LinearLayoutManager(this)
         rvArticleDetails.adapter = BaseRecyclerAdapter(this, object : IAdapterListener {
             override fun getViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
@@ -68,8 +69,8 @@ class ArticleDetailsActivity : BaseActivity() {
 
             override fun <T> clickListener(position: Int, model: T, view: View) {
                 model as ArticleDetails
-                when(view.id){
-                    R.id.ivArticleDetails->{
+                when (view.id) {
+                    R.id.ivArticleDetails -> {
                         showDialog(true, DialogShowImage.newInstance(model.extended_details))
                     }
                 }
@@ -84,7 +85,10 @@ class ArticleDetailsActivity : BaseActivity() {
 
         }.type
         val baseData =
-            Gson().fromJson<BaseModel<ArticleDetailsRespons>>(result.data!!.body()!!.string(), articleDetailsType)
+            Gson().fromJson<BaseModel<ArticleDetailsRespons>>(
+                result.data!!.body()!!.string(),
+                articleDetailsType
+            )
 
         if (baseData.status) {
 

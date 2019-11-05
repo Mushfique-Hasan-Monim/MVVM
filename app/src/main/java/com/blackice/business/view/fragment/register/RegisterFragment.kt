@@ -48,11 +48,7 @@ class RegisterFragment : BaseFragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_register, container, false);
         this.viewModel = ViewModelProviders.of(
-            this, BaseViewmodelFactory(
-                RegisterViewmodel(
-                    dataManager
-                )
-            )
+            this, viewModelFactory
         ).get(RegisterViewmodel::class.java)
         return binding.root
     }

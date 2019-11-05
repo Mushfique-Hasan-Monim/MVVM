@@ -27,7 +27,7 @@ import retrofit2.Response
 import javax.inject.Inject
 
 
-class LoginFragment private constructor(): BaseFragment() {
+class LoginFragment private constructor() : BaseFragment() {
 
 
     companion object {
@@ -58,13 +58,14 @@ class LoginFragment private constructor(): BaseFragment() {
         super.onAttach(activity)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false);
-        this.viewModel = ViewModelProviders.of(this, BaseViewmodelFactory(
-            LoginFragmentViewModel(
-                dataManager
-            )
-        )).get(LoginFragmentViewModel::class.java)
+        this.viewModel =
+            ViewModelProviders.of(this, viewModelFactory).get(LoginFragmentViewModel::class.java)
         return binding.root
     }
 
@@ -75,7 +76,7 @@ class LoginFragment private constructor(): BaseFragment() {
 
         binding.btnLogin.setOnClickListener {
 
-            viewModel.fetchLogin("demo","12345678",this)
+            viewModel.fetchLogin("demo", "12345678", this)
         }
 
         binding.btnSignUp.setOnClickListener {
@@ -92,7 +93,8 @@ class LoginFragment private constructor(): BaseFragment() {
                 val userType = object : TypeToken<BaseModel<User>>() {
 
                 }.type
-                val baseData = Gson().fromJson<BaseModel<User>>(result.data!!.body()!!.string(), userType)
+                val baseData =
+                    Gson().fromJson<BaseModel<User>>(result.data!!.body()!!.string(), userType)
 
                 if (baseData.status) {
                     if (baseData.data != null) {
@@ -101,7 +103,7 @@ class LoginFragment private constructor(): BaseFragment() {
                         dataManager.mPref.prefLogin(user!!)
                         val loginActivity = activity as LoginActivity
                         //loginActivity.setDatamanager()
-                        activity!!.startActivity(Intent(activity,MainActivity::class.java))
+                        activity!!.startActivity(Intent(activity, MainActivity::class.java))
                         activity!!.finish()
                     }
 
@@ -113,19 +115,19 @@ class LoginFragment private constructor(): BaseFragment() {
             }
 
         }
-        Log.e("callback","success")
+        Log.e("callback", "success")
     }
 
     override fun onLoading(isLoader: Boolean) {
-        if(isLoader){
-            Log.e("callback","loading")
-        }else{
-            Log.e("callback","stop loading")
+        if (isLoader) {
+            Log.e("callback", "loading")
+        } else {
+            Log.e("callback", "stop loading")
         }
 
     }
 
     override fun onError(err: Throwable) {
-        Log.e("callback","error")
+        Log.e("callback", "error")
     }
 }

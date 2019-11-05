@@ -21,11 +21,6 @@ class MyApp : DaggerApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        injectDagger()
-    }
-
-    private fun injectDagger() {
-        appComponent.inject(this)
     }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {

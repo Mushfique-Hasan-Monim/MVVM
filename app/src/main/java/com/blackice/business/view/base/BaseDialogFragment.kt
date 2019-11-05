@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.ViewModelProvider
 import com.blackice.business.R
 import com.blackice.business.data.DataManager
 import com.blackice.business.util.IObserverCallBack
@@ -15,6 +16,9 @@ abstract class BaseDialogFragment : DialogFragment(), IObserverCallBack {
 
     @Inject
     lateinit var dataManager: DataManager
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -38,7 +42,6 @@ abstract class BaseDialogFragment : DialogFragment(), IObserverCallBack {
         toast.view = view
         toast.show()
     }
-
 
 
 }

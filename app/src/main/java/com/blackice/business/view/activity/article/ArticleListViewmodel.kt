@@ -4,8 +4,9 @@ import androidx.lifecycle.LifecycleOwner
 import com.blackice.business.data.DataManager
 import com.blackice.business.view.base.BaseViewModel
 import sslwireless.android.easy.loyal.merchant.viewmodel.util.ApiCallbackHelper
+import javax.inject.Inject
 
-class ArticleListViewmodel(dataManager: DataManager) : BaseViewModel() {
+class ArticleListViewmodel @Inject constructor(dataManager: DataManager) : BaseViewModel() {
 
     val dataManager = dataManager
 

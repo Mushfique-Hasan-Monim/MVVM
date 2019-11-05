@@ -32,7 +32,7 @@ import javax.inject.Inject
 
 class ArticleListActivity : BaseActivity() {
     private lateinit var binding: ActivityArticleListBinding
-    private lateinit var viewmodel: ArticleListViewmodel
+    lateinit var viewmodel: ArticleListViewmodel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,22 +41,22 @@ class ArticleListActivity : BaseActivity() {
 
         viewmodel = ViewModelProviders.of(
             this,
-            BaseViewmodelFactory(ArticleListViewmodel(dataManager))
+            viewModelFactory
         ).get(ArticleListViewmodel::class.java)
 
 
     }
 
     override fun viewRelatedTask() {
-        setToolbar(this, binding.toolbar,"Article List",true)
-        viewmodel.fetchGetArticle(intent.getIntExtra("id",0),this)
+        setToolbar(this, binding.toolbar, "Article List", true)
+        viewmodel.fetchGetArticle(intent.getIntExtra("id", 0), this)
 
     }
 
-    private fun initArticle(articles:List<Article>){
+    private fun initArticle(articles: List<Article>) {
 
         binding.rvArticleList.layoutManager = LinearLayoutManager(this)
-        binding.rvArticleList.adapter = BaseRecyclerAdapter(this, object: IAdapterListener{
+        binding.rvArticleList.adapter = BaseRecyclerAdapter(this, object : IAdapterListener {
             override fun <T> clickListener(position: Int, model: T, view: View) {
 
                 model as Article
@@ -71,13 +71,15 @@ class ArticleListActivity : BaseActivity() {
 
                     DataBindingUtil.inflate(
                         LayoutInflater.from(parent.context)
-                        ,R.layout.item_article
-                        ,parent,false)
+                        , R.layout.item_article
+                        , parent, false
+                    )
 
-                    ,this@ArticleListActivity)
+                    , this@ArticleListActivity
+                )
             }
 
-        },articles as ArrayList)
+        }, articles as ArrayList)
 
     }
 

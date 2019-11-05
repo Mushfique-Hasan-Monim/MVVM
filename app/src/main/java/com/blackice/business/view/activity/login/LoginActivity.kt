@@ -26,7 +26,7 @@ class LoginActivity : BaseActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
 
         this.viewModel =
-            ViewModelProviders.of(this, BaseViewmodelFactory(LoginViewModel(dataManager)))
+            ViewModelProviders.of(this, viewModelFactory)
                 .get(LoginViewModel::class.java)
 
     }
@@ -38,20 +38,20 @@ class LoginActivity : BaseActivity() {
 
     override fun onSuccess(result: LiveDataResult<Response<ResponseBody>>, key: String) {
 
-        Log.e("callback","success")
+        Log.e("callback", "success")
     }
 
     override fun onLoading(isLoader: Boolean) {
-        if(isLoader){
-            Log.e("callback","loading")
-        }else{
-            Log.e("callback","stop loading")
+        if (isLoader) {
+            Log.e("callback", "loading")
+        } else {
+            Log.e("callback", "stop loading")
         }
 
     }
 
     override fun onError(err: Throwable) {
-        Log.e("callback","error")
+        Log.e("callback", "error")
     }
 
 

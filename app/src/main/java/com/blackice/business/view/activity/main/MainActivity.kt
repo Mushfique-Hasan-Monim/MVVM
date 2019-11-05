@@ -42,7 +42,7 @@ class MainActivity : BaseActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         this.viewModel =
-            ViewModelProviders.of(this, BaseViewmodelFactory(MainViewModel(dataManager)))
+            ViewModelProviders.of(this, viewModelFactory)
                 .get(MainViewModel::class.java)
 
 
@@ -90,7 +90,10 @@ class MainActivity : BaseActivity() {
 
         }.type
         val baseData =
-            Gson().fromJson<BaseModel<List<Category>>>(result.data!!.body()!!.string(), CategoryType)
+            Gson().fromJson<BaseModel<List<Category>>>(
+                result.data!!.body()!!.string(),
+                CategoryType
+            )
 
 
         if (baseData.status) {

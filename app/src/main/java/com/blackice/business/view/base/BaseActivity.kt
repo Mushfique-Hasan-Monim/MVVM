@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.blackice.business.MyApp
 import com.blackice.business.R
 import com.blackice.business.data.DataManager
@@ -23,6 +24,9 @@ abstract class BaseActivity : DaggerAppCompatActivity(), IObserverCallBack {
 
     @Inject
     lateinit var dataManager: DataManager
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
 
     override
     fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +51,12 @@ abstract class BaseActivity : DaggerAppCompatActivity(), IObserverCallBack {
 
     }
 
-    fun setToolbar(context: Context, toolbar: ToolbarLayoutBinding, title: String, isBackPressed: Boolean) {
+    fun setToolbar(
+        context: Context,
+        toolbar: ToolbarLayoutBinding,
+        title: String,
+        isBackPressed: Boolean
+    ) {
         toolbar.drawerTitle.setText(title)
         if (isBackPressed) {
             toolbar.drawerNavigationIcon.isVisible = true

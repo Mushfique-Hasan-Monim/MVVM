@@ -96,10 +96,5 @@ class AppModule {
         return ApiHelper(apiService)
     }
 
-    @Provides
-    @Singleton
-    fun provideDatamanager(preferencesHelper: PreferencesHelper,roomHelper: RoomHelper,apiHelper: ApiHelper): DataManager {
-        return DataManager(preferencesHelper,roomHelper,apiHelper)
-    }
 
 }
