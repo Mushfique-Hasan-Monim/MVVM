@@ -9,8 +9,12 @@ import androidx.fragment.app.DialogFragment
 import com.blackice.business.R
 import com.blackice.business.data.DataManager
 import com.blackice.business.util.IObserverCallBack
+import javax.inject.Inject
 
 abstract class BaseDialogFragment : DialogFragment(), IObserverCallBack {
+
+    @Inject
+    lateinit var dataManager: DataManager
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -35,10 +39,6 @@ abstract class BaseDialogFragment : DialogFragment(), IObserverCallBack {
         toast.show()
     }
 
-    fun getDataManager(): DataManager {
-        val application = context as BaseActivity
-        return application.getDataManager()
-    }
 
 
 }

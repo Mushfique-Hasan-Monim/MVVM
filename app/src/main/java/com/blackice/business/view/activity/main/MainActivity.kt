@@ -13,6 +13,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_main.*
 import com.blackice.business.R
+import com.blackice.business.data.DataManager
 import com.blackice.business.data.local_db.entity.Category
 import com.blackice.business.data.model.BaseModel
 import com.blackice.business.databinding.ActivityMainBinding
@@ -23,9 +24,11 @@ import com.blackice.business.view.base.BaseActivity
 import com.blackice.business.view.base.BaseRecyclerAdapter
 import com.blackice.business.view.base.BaseViewHolder
 import com.blackice.business.view.base.BaseViewmodelFactory
+import dagger.android.AndroidInjection
 import okhttp3.ResponseBody
 import retrofit2.Response
 import java.util.ArrayList
+import javax.inject.Inject
 
 class MainActivity : BaseActivity() {
 
@@ -33,12 +36,13 @@ class MainActivity : BaseActivity() {
     lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: MainViewModel
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         this.viewModel =
-            ViewModelProviders.of(this, BaseViewmodelFactory(MainViewModel(getDataManager())))
+            ViewModelProviders.of(this, BaseViewmodelFactory(MainViewModel(dataManager)))
                 .get(MainViewModel::class.java)
 
 
@@ -93,10 +97,10 @@ class MainActivity : BaseActivity() {
 
             if (baseData.data != null) {
                 val categories = baseData.data!!
-                getDataManager().roomHelper.getDatabase().categoryDao().delete()
-                getDataManager().roomHelper.getDatabase().categoryDao().insert(categories!!)
+                dataManager.roomHelper.getDatabase().categoryDao().delete()
+                dataManager.roomHelper.getDatabase().categoryDao().insert(categories!!)
 
-                initCategoryRecyclerview(getDataManager().roomHelper.getDatabase().categoryDao().getAll())
+                initCategoryRecyclerview(dataManager.roomHelper.getDatabase().categoryDao().getAll())
             }
 
         }

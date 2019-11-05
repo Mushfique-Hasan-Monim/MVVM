@@ -13,6 +13,7 @@ import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_article_details.*
 
 import com.blackice.business.R
+import com.blackice.business.data.DataManager
 import com.blackice.business.data.model.ArticleDetails
 import com.blackice.business.data.model.ArticleDetailsRespons
 import com.blackice.business.data.model.BaseModel
@@ -24,18 +25,22 @@ import com.blackice.business.view.base.BaseRecyclerAdapter
 import com.blackice.business.view.base.BaseViewHolder
 import com.blackice.business.view.base.BaseViewmodelFactory
 import com.blackice.business.view.dialog.DialogShowImage
+import dagger.android.AndroidInjection
 import okhttp3.ResponseBody
 import retrofit2.Response
 import java.util.ArrayList
+import javax.inject.Inject
 
 class ArticleDetailsActivity : BaseActivity() {
     lateinit var binding : ActivityArticleDetailsBinding
     lateinit var viewmodel: ArticleDetailsViewmodel
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_article_details)
-        viewmodel = ViewModelProviders.of(this, BaseViewmodelFactory(ArticleDetailsViewmodel(getDataManager()))).get(
+
+        viewmodel = ViewModelProviders.of(this, BaseViewmodelFactory(ArticleDetailsViewmodel(dataManager))).get(
             ArticleDetailsViewmodel::class.java)
     }
 

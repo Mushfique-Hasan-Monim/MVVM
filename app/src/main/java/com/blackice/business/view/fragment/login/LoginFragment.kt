@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.blackice.business.R
+import com.blackice.business.data.DataManager
 import com.blackice.business.data.model.BaseModel
 import com.blackice.business.data.model.user.User
 import com.blackice.business.databinding.FragmentLoginBinding
@@ -23,7 +24,7 @@ import com.blackice.business.view.base.*
 import com.blackice.business.view.fragment.register.RegisterFragment
 import okhttp3.ResponseBody
 import retrofit2.Response
-
+import javax.inject.Inject
 
 
 class LoginFragment private constructor(): BaseFragment() {
@@ -61,7 +62,7 @@ class LoginFragment private constructor(): BaseFragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false);
         this.viewModel = ViewModelProviders.of(this, BaseViewmodelFactory(
             LoginFragmentViewModel(
-                getDataManager()
+                dataManager
             )
         )).get(LoginFragmentViewModel::class.java)
         return binding.root
@@ -97,9 +98,9 @@ class LoginFragment private constructor(): BaseFragment() {
                     if (baseData.data != null) {
                         val user = baseData.data
 
-                        getDataManager().mPref.prefLogin(user!!)
+                        dataManager.mPref.prefLogin(user!!)
                         val loginActivity = activity as LoginActivity
-                        loginActivity.setDatamanager()
+                        //loginActivity.setDatamanager()
                         activity!!.startActivity(Intent(activity,MainActivity::class.java))
                         activity!!.finish()
                     }

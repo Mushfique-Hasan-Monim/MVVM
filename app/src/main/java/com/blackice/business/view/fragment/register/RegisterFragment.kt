@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.blackice.business.R
+import com.blackice.business.data.DataManager
 import com.blackice.business.databinding.FragmentRegisterBinding
 import com.blackice.business.util.ConstantField
 import com.blackice.business.util.LiveDataResult
@@ -18,6 +19,7 @@ import com.blackice.business.view.fragment.login.LoginFragment
 import okhttp3.ResponseBody
 import org.json.JSONObject
 import retrofit2.Response
+import javax.inject.Inject
 
 class RegisterFragment : BaseFragment() {
 
@@ -48,7 +50,7 @@ class RegisterFragment : BaseFragment() {
         this.viewModel = ViewModelProviders.of(
             this, BaseViewmodelFactory(
                 RegisterViewmodel(
-                    getDataManager()
+                    dataManager
                 )
             )
         ).get(RegisterViewmodel::class.java)
@@ -87,15 +89,24 @@ class RegisterFragment : BaseFragment() {
             binding.edtName.setError("Please enter name")
             isValid = false
         }
-        if (binding.edtUserName.text.toString().equals(null) && binding.edtUserName.text.toString().equals("")) {
+        if (binding.edtUserName.text.toString().equals(null) && binding.edtUserName.text.toString().equals(
+                ""
+            )
+        ) {
             binding.edtUserName.setError("Please enter user name")
             isValid = false
         }
-        if (binding.edtPassword.text.toString().equals(null) && binding.edtPassword.text.toString().equals("")) {
+        if (binding.edtPassword.text.toString().equals(null) && binding.edtPassword.text.toString().equals(
+                ""
+            )
+        ) {
             binding.edtPassword.setError("Please enter password")
             isValid = false
         }
-        if (binding.edtEmail.text.toString().equals(null) && binding.edtEmail.text.toString().equals("")) {
+        if (binding.edtEmail.text.toString().equals(null) && binding.edtEmail.text.toString().equals(
+                ""
+            )
+        ) {
             binding.edtEmail.setError("Please enter email")
             isValid = false
         }
@@ -112,7 +123,7 @@ class RegisterFragment : BaseFragment() {
             } else {
                 showToast(context!!, jsonObject.get("message").toString())
             }
-        }?:run{
+        } ?: run {
             showToast(context!!, "Something wrong")
         }
 

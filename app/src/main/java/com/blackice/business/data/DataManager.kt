@@ -5,15 +5,14 @@ import com.blackice.business.data.local_db.RoomHelper
 import com.blackice.business.data.network.ApiHelper
 import com.blackice.business.data.network.RetrofitFactory
 import com.blackice.business.data.prefence.PreferencesHelper
+import javax.inject.Inject
 
-class DataManager(
-    context: Context
+class DataManager constructor(
+    preferencesHelper: PreferencesHelper,roomHelper: RoomHelper, apiHelper: ApiHelper
 ) : IDataManager {
-    private val context = context
 
-    val mContext = context
-    val mPref = PreferencesHelper(mContext)
-    val roomHelper = RoomHelper(context)
-    val apiHelper = ApiHelper(RetrofitFactory.providePostApi(mPref.prefGetToken()))
+    val mPref = preferencesHelper
+    val roomHelper = roomHelper
+    val apiHelper = apiHelper
 
 }

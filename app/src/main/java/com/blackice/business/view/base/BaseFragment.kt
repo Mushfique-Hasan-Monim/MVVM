@@ -9,9 +9,15 @@ import androidx.fragment.app.Fragment
 import com.blackice.business.R
 import com.blackice.business.data.DataManager
 import com.blackice.business.util.IObserverCallBack
+import dagger.android.support.DaggerFragment
+import javax.inject.Inject
 
 
-abstract class BaseFragment: Fragment(), IObserverCallBack {
+abstract class BaseFragment: DaggerFragment(), IObserverCallBack {
+
+
+    @Inject
+    lateinit var dataManager: DataManager
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -37,9 +43,5 @@ abstract class BaseFragment: Fragment(), IObserverCallBack {
         (activity as BaseActivity).showDialog(isCancelAble, dialogFragment)
     }
 
-    fun getDataManager(): DataManager {
-        val application = context as BaseActivity
-        return application.getDataManager()
-    }
 
 }

@@ -5,13 +5,16 @@ import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.blackice.business.R
+import com.blackice.business.data.DataManager
 import com.blackice.business.databinding.ActivityLoginBinding
 import com.blackice.business.util.LiveDataResult
 import com.blackice.business.view.base.BaseActivity
 import com.blackice.business.view.base.BaseViewmodelFactory
 import com.blackice.business.view.fragment.login.LoginFragment
+import dagger.android.AndroidInjection
 import okhttp3.ResponseBody
 import retrofit2.Response
+import javax.inject.Inject
 
 class LoginActivity : BaseActivity() {
 
@@ -23,7 +26,7 @@ class LoginActivity : BaseActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
 
         this.viewModel =
-            ViewModelProviders.of(this, BaseViewmodelFactory(LoginViewModel(getDataManager())))
+            ViewModelProviders.of(this, BaseViewmodelFactory(LoginViewModel(dataManager)))
                 .get(LoginViewModel::class.java)
 
     }

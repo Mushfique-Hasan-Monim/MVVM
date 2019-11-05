@@ -26,7 +26,8 @@
         <activity
             android:name=".view.activity.login.LoginActivity"
             android:windowSoftInputMode="adjustResize"></activity>
-        <activity android:name=".view.activity.main.MainActivity" />
+        <activity android:name=".view.activity.main.MainActivity"
+            android:launchMode="singleTop"/>
     </application>
 
 </manifest>

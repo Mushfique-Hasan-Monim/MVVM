@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.blackice.business.R
+import com.blackice.business.data.DataManager
 import com.blackice.business.data.local_db.entity.Article
 import com.blackice.business.data.model.ArticleRespons
 import com.blackice.business.data.model.BaseModel
@@ -23,20 +24,24 @@ import com.blackice.business.view.base.BaseActivity
 import com.blackice.business.view.base.BaseRecyclerAdapter
 import com.blackice.business.view.base.BaseViewHolder
 import com.blackice.business.view.base.BaseViewmodelFactory
+import dagger.android.AndroidInjection
 import okhttp3.ResponseBody
 import retrofit2.Response
 import java.util.ArrayList
+import javax.inject.Inject
 
 class ArticleListActivity : BaseActivity() {
     private lateinit var binding: ActivityArticleListBinding
     private lateinit var viewmodel: ArticleListViewmodel
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_article_list)
+
         viewmodel = ViewModelProviders.of(
             this,
-            BaseViewmodelFactory(ArticleListViewmodel(getDataManager()))
+            BaseViewmodelFactory(ArticleListViewmodel(dataManager))
         ).get(ArticleListViewmodel::class.java)
 
 

@@ -15,8 +15,14 @@ import com.blackice.business.R
 import com.blackice.business.data.DataManager
 import com.blackice.business.databinding.ToolbarLayoutBinding
 import com.blackice.business.util.IObserverCallBack
+import dagger.android.DaggerActivity
+import dagger.android.support.DaggerAppCompatActivity
+import javax.inject.Inject
 
-abstract class BaseActivity : AppCompatActivity(), IObserverCallBack {
+abstract class BaseActivity : DaggerAppCompatActivity(), IObserverCallBack {
+
+    @Inject
+    lateinit var dataManager: DataManager
 
     override
     fun onCreate(savedInstanceState: Bundle?) {
@@ -29,13 +35,6 @@ abstract class BaseActivity : AppCompatActivity(), IObserverCallBack {
     }
 
     abstract fun viewRelatedTask()
-
-
-
-    fun getDataManager(): DataManager {
-        val application = applicationContext as MyApp
-        return application.getDataManager()
-    }
 
     override fun startActivity(intent: Intent) {
         super.startActivity(intent)
@@ -108,9 +107,5 @@ abstract class BaseActivity : AppCompatActivity(), IObserverCallBack {
         dialogFragment.show(getSupportFragmentManager().beginTransaction(), "dialog")
     }
 
-    fun setDatamanager(){
-        val myApp = applicationContext as MyApp
-        myApp.setDataManager()
-    }
 
 }
