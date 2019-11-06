@@ -41,7 +41,7 @@ binding.rvArticleList.adapter = BaseRecyclerAdapter(this, object : IAdapterListe
 
 ```
 
-BaseRecyclerAdapter constractor contain three parameter (context, IAdapterListener, and data list)
+BaseRecyclerAdapter constractor contain three parameter (context, IAdapterListener, and data list).
 IAdapterListener has two override method
 * getViewHolder() with parameter viewgroup and viewType.
   return BaseViewHolder
