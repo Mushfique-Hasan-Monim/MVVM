@@ -6,6 +6,7 @@ This sample is about article read which the API i used from [Appshill](http://nu
 * [Kotlin](https://developer.android.com/topic/libraries/architecture/viewmodel)
 * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
 * [LiveData](https://developer.android.com/jetpack/arch/livedata)
+* [Dagger](https://dagger.dev)
 * [Room](https://developer.android.com/training/data-storage/room/) // Local data storage
 * [Retrofit](https://square.github.io/retrofit/) // Networking
 * [GSON](https://github.com/square/moshi) // JSON parser
