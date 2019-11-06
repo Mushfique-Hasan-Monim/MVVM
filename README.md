@@ -2,7 +2,7 @@
 Android MVVM Project example with kotlin, Livedata, Viewmodel, Dagger
 
 Kotlin android application example with MVVM pattern, android architecture components, and kotlin coroutine.
-This sample is about article read which the API i used from [theSportDb](http://nurhossen.info/appsHill/api/).
+This sample is about article read which the API i used from [Appshill](http://nurhossen.info/appsHill/api/).
 * [Kotlin](https://developer.android.com/topic/libraries/architecture/viewmodel)
 * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
 * [LiveData](https://developer.android.com/jetpack/arch/livedata)
