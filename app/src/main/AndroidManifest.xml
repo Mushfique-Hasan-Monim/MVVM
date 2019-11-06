@@ -25,7 +25,7 @@
         <activity android:name=".view.activity.article.ArticleListActivity" />
         <activity
             android:name=".view.activity.login.LoginActivity"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"></activity>
         <activity android:name=".view.activity.main.MainActivity"
             android:launchMode="singleTop"/>
     </application>
