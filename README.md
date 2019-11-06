@@ -13,7 +13,7 @@ This sample is about article read which the API i used from [Appshill](http://nu
 * [Glide](http://square.github.io/picasso/) // Image loader
 
 
-# Use recyler adapter like. One adapter for all recycler view: 
+# One adapter for all recycler view: 
 ```javascript
 binding.rvArticleList.layoutManager = LinearLayoutManager(this)
 binding.rvArticleList.adapter = BaseRecyclerAdapter(this, object : IAdapterListener {
