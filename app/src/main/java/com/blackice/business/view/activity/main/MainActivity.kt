@@ -112,11 +112,12 @@ class MainActivity : BaseActivity() {
 
 
     override fun onLoading(isLoader: Boolean) {
-        if (isLoader) {
-            Log.e("callback", "loading")
-        } else {
-            Log.e("callback", "stop loading")
+        if(isLoader){
+            binding.progressBar.visibility = View.VISIBLE
+        }else{
+            binding.progressBar.visibility = View.GONE
         }
+
 
     }
 

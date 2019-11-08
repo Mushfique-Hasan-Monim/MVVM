@@ -103,7 +103,11 @@ class ArticleDetailsActivity : BaseActivity() {
     }
 
     override fun onLoading(isLoader: Boolean) {
-
+        if(isLoader){
+            binding.progressBar.visibility = View.VISIBLE
+        }else{
+            binding.progressBar.visibility = View.GONE
+        }
     }
 
     override fun onError(err: Throwable) {

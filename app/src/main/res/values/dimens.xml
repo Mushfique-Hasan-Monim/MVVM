@@ -11,4 +11,5 @@
     <dimen name="title_top_margin">50dp</dimen>
     <dimen name="text_primary">17sp</dimen>
     <dimen name="text_small">12sp</dimen>
+    <dimen name="xx_large_marge">60dp</dimen>
 </resources>
