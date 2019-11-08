@@ -1,6 +1,7 @@
 package com.blackice.business.view.base
 
 import android.content.Context
+import android.util.Log
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.blackice.business.view.adapter.IAdapterListener
@@ -21,16 +22,19 @@ class BaseRecyclerAdapter<T>(
     }
 
     override fun getItemCount(): Int {
-        return datas.size
+        val n = if (datas.size > 0) datas.size else 1
+        return if (datas.size > 0) datas.size else 1
     }
 
     override fun getItemViewType(position: Int): Int {
-        return position
+        return if (datas.size > 0) position else -1
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
-        this.holder = holder
-        this.holder.onBind(position, datas.get(position), listener)
+        if (datas.size > 0) {
+            this.holder = holder
+            this.holder.onBind(position, datas.get(position), listener)
+        }
     }
 
     fun addData(datas: ArrayList<T>) {
