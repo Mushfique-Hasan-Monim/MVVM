@@ -2,14 +2,11 @@ package com.blackice.business.di
 
 import android.app.Application
 import android.content.Context
-import android.preference.Preference
 import androidx.annotation.NonNull
 import com.blackice.business.BuildConfig
-import com.blackice.business.data.DataManager
 import com.blackice.business.data.local_db.RoomHelper
 import com.blackice.business.data.network.ApiHelper
 import com.blackice.business.data.network.IApiService
-import com.blackice.business.data.network.RetrofitFactory
 import com.blackice.business.data.prefence.PreferencesHelper
 import dagger.Module
 import dagger.Provides
