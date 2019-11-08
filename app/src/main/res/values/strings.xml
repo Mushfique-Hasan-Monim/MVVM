@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Pure MVVM Example</string>
+    <string name="app_name">MVVM Example</string>
     <string name="code_404">404</string>
     <string name="code_401">401</string>
     <string name="code_200">200</string>
