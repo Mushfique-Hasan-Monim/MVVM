@@ -1,14 +1,14 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.bumptech.glide:glide:4.7.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/96ef7e5120b6031abc3e7701cb27d10a/jetified-glide-4.7.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/96ef7e5120b6031abc3e7701cb27d10a/jetified-glide-4.7.1/res" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/baab2d8b35f677e2d4902101434d348a/jetified-glide-4.7.1/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/baab2d8b35f677e2d4902101434d348a/jetified-glide-4.7.1/res" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/4.7.1/431801623c2896da1191f2bfce9d89f118fb067f/glide-4.7.1-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/4.7.1/431801623c2896da1191f2bfce9d89f118fb067f/glide-4.7.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/4.7.1/835685a4ca352a1c6d5f724088432ae950e04bac/glide-4.7.1-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/4.7.1/835685a4ca352a1c6d5f724088432ae950e04bac/glide-4.7.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
