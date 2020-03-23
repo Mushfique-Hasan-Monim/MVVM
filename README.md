@@ -78,18 +78,6 @@ class ArticleViewholder(itemView: ViewDataBinding, context: Context) :
 
        binding.tvTitle.setText(itemModel.title)
 
-
-        binding.tvTitle.getViewTreeObserver()
-            .addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
-                override fun onGlobalLayout() {
-                    binding.tvTitle.getViewTreeObserver().removeOnGlobalLayoutListener(this)
-
-                    if( binding.tvTitle.getLineCount() > 1){
-                        binding.tvArticleDetails.maxLines = 1
-                    }
-                }
-            })
-
         binding.tvArticleDetails.setText(itemModel.description)
 
         simpleTimeFormatFromServer.parse(itemModel.created_date).let {
