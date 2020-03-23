@@ -1,8 +1,10 @@
 package com.blackice.business.view.base
 
+import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
@@ -22,6 +24,8 @@ import javax.inject.Inject
 
 abstract class BaseActivity : DaggerAppCompatActivity(), IObserverCallBack {
 
+    private lateinit var dialogs: ProgressDialog
+
     @Inject
     lateinit var dataManager: DataManager
 
@@ -35,6 +39,7 @@ abstract class BaseActivity : DaggerAppCompatActivity(), IObserverCallBack {
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
+        dialogs =  ProgressDialog(this)
         viewRelatedTask()
     }
 
@@ -100,7 +105,36 @@ abstract class BaseActivity : DaggerAppCompatActivity(), IObserverCallBack {
             )
         }
     }
+    fun showProgressDialog(message: String) {
+        if (TextUtils.isEmpty(message)) {
+            dialogs.setMessage("")
+        } else {
+            dialogs.setMessage(message)
+        }
+        if (!dialogs.isShowing) {
+            dialogs.setCancelable(false)
+            dialogs.show()
+        }
+    }
 
+    fun hideProgressDialog() {
+        if (!this.isFinishing && dialogs.isShowing) {
+            dialogs.dismiss()
+        }
+    }
+
+    override fun onLoading(isLoader: Boolean) {
+        if (isLoader) {
+            showProgressDialog("Please wait")
+        } else {
+            hideProgressDialog()
+        }
+
+    }
+
+    override fun onError(err: Throwable) {
+        showToast(this,err.message!!)
+    }
     fun addFragment(isReplace: Boolean, container: Int, fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         if (isReplace) {

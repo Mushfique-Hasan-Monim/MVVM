@@ -125,12 +125,4 @@ class RegisterFragment : BaseFragment() {
 
     }
 
-    override fun onLoading(isLoader: Boolean) {
-
-    }
-
-    override fun onError(err: Throwable) {
-
-        showToast(context!!, err.message!!)
-    }
 }

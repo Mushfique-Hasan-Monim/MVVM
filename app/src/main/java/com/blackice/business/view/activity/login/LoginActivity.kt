@@ -41,18 +41,6 @@ class LoginActivity : BaseActivity() {
         Log.e("callback", "success")
     }
 
-    override fun onLoading(isLoader: Boolean) {
-        if (isLoader) {
-            Log.e("callback", "loading")
-        } else {
-            Log.e("callback", "stop loading")
-        }
-
-    }
-
-    override fun onError(err: Throwable) {
-        Log.e("callback", "error")
-    }
 
 
 }

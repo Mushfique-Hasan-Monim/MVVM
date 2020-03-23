@@ -1,7 +1,9 @@
 package com.blackice.business.view.base
 
+import android.app.ProgressDialog
 import android.content.Context
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.widget.TextView
 import android.widget.Toast
@@ -22,9 +24,11 @@ abstract class BaseFragment : DaggerFragment(), IObserverCallBack {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
+    private lateinit var dialogs: ProgressDialog
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        dialogs =  ProgressDialog(activity!!)
         viewRelatedTask()
     }
 
@@ -46,6 +50,37 @@ abstract class BaseFragment : DaggerFragment(), IObserverCallBack {
 
     fun showDialog(isCancelAble: Boolean, dialogFragment: BaseDialogFragment) {
         (activity as BaseActivity).showDialog(isCancelAble, dialogFragment)
+    }
+
+    override fun onLoading(isLoader: Boolean) {
+        if (isLoader) {
+            showProgressDialog("Please wait")
+        } else {
+            hideProgressDialog()
+        }
+
+    }
+
+    fun showProgressDialog(message: String) {
+        if (TextUtils.isEmpty(message)) {
+            dialogs.setMessage("")
+        } else {
+            dialogs.setMessage(message)
+        }
+        if (!dialogs.isShowing) {
+            dialogs.setCancelable(false)
+            dialogs.show()
+        }
+    }
+
+    fun hideProgressDialog() {
+        if (!activity!!.isFinishing && dialogs.isShowing) {
+            dialogs.dismiss()
+        }
+    }
+
+    override fun onError(err: Throwable) {
+        showToast(activity!!,err.message!!)
     }
 
 

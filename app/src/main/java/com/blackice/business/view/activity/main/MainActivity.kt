@@ -110,20 +110,4 @@ class MainActivity : BaseActivity() {
         Log.e("callback", "success")
     }
 
-
-    override fun onLoading(isLoader: Boolean) {
-        if(isLoader){
-            binding.progressBar.visibility = View.VISIBLE
-        }else{
-            binding.progressBar.visibility = View.GONE
-        }
-
-
-    }
-
-    override fun onError(err: Throwable) {
-        Log.e("callback", "error")
-    }
-
-
 }
