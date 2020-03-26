@@ -2,6 +2,7 @@ package com.blackice.business.view.activity.login
 
 import android.os.Bundle
 import android.util.Log
+import androidx.core.app.ActivityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.blackice.business.R
@@ -29,10 +30,27 @@ class LoginActivity : BaseActivity() {
             ViewModelProviders.of(this, viewModelFactory)
                 .get(LoginViewModel::class.java)
 
+
+
     }
 
     override fun viewRelatedTask() {
         addFragment(true, R.id.container, LoginFragment.newInstance("No"))
+        val PERMISSIONS = arrayOf(
+            android.Manifest.permission.READ_EXTERNAL_STORAGE,
+            android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            android.Manifest.permission.CAMERA,
+            android.Manifest.permission.ACCESS_FINE_LOCATION
+        )
+        //String PERMISSIONS = arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        if (!hasPermissions(this, PERMISSIONS)) {
+            ActivityCompat.requestPermissions(
+                this,
+                PERMISSIONS,
+                102
+            )
+        }
+        chooseImage("monim is a good boy")
     }
 
 

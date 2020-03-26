@@ -1,15 +1,24 @@
 package com.blackice.business.view.base
 
 import android.app.ProgressDialog
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
 import android.text.TextUtils
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -18,13 +27,19 @@ import com.blackice.business.R
 import com.blackice.business.data.DataManager
 import com.blackice.business.databinding.ToolbarLayoutBinding
 import com.blackice.business.util.IObserverCallBack
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.android.DaggerActivity
 import dagger.android.support.DaggerAppCompatActivity
+import kotlinx.android.synthetic.main.base_bottom_sheet.*
+import kotlinx.android.synthetic.main.base_image_choose.*
+import kotlinx.android.synthetic.main.dialog_show_image.*
 import javax.inject.Inject
 
 abstract class BaseActivity : DaggerAppCompatActivity(), IObserverCallBack {
 
     private lateinit var dialogs: ProgressDialog
+    private var baseBottomSheet:BottomSheetDialogFragment?=null
+    var image_uri: Uri? = null
 
     @Inject
     lateinit var dataManager: DataManager
@@ -130,6 +145,122 @@ abstract class BaseActivity : DaggerAppCompatActivity(), IObserverCallBack {
             hideProgressDialog()
         }
 
+    }
+
+    fun showStatus(code: Int, heading : String, message: String) {
+        hideKeyboard()
+        class BaseBottomSheet : BottomSheetDialogFragment() {
+
+            override fun onCreateView(
+                inflater: LayoutInflater,
+                container: ViewGroup?,
+                savedInstanceState: Bundle?
+            ): View? {
+
+                val view = inflater.inflate(R.layout.base_bottom_sheet, container)
+                return view
+            }
+
+            override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+                super.onViewCreated(view, savedInstanceState)
+                if (code == 200) {
+                    success_fail_image.setImageResource(R.drawable.success_ic)
+                    success_text.setText("SUCCESS")
+                    message_text.setText(message)
+
+                }
+                else if (code == 201) {
+                    success_fail_image.setImageResource(R.drawable.alert_ic)
+                    success_text.setText(heading)
+                    message_text.setText(message)
+
+                }
+                else {
+                    success_fail_image.setImageResource(R.drawable.fail_ic)
+                    success_text.setText("FAIL")
+                    message_text.setText(message)
+                }
+
+                okay_button.setOnClickListener {
+                    onBackPressed()
+                    baseBottomSheet!!.dismiss()
+                }
+
+            }
+
+            override fun onAttach(context: Context) {
+                super.onAttach(context)
+
+            }
+        }
+        baseBottomSheet = BaseBottomSheet()
+        baseBottomSheet!!.show(supportFragmentManager,"1234")
+    }
+
+
+    fun chooseImage( title : String) {
+        hideKeyboard()
+        class BaseBottomSheet : BottomSheetDialogFragment() {
+
+            override fun onCreateView(
+                inflater: LayoutInflater,
+                container: ViewGroup?,
+                savedInstanceState: Bundle?
+            ): View? {
+
+                val view = inflater.inflate(R.layout.base_image_choose, container)
+                return view
+            }
+
+            override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+                super.onViewCreated(view, savedInstanceState)
+
+                tvTitle.text = title
+
+                tvCamera.setOnClickListener {
+                    val values = ContentValues()
+                    values.put(MediaStore.Images.Media.TITLE, "New Picture")
+                    values.put(MediaStore.Images.Media.DESCRIPTION, "From the Camera")
+                    image_uri = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+                    //camera intent
+                    val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                    cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, image_uri)
+                    startActivityForResult(cameraIntent, 0)
+                    baseBottomSheet!!.dismiss()
+                }
+                tvGallery.setOnClickListener {
+                    val pickPhoto =
+                        Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+                    startActivityForResult(pickPhoto, 1)
+
+                    baseBottomSheet!!.dismiss()
+                }
+                btnCancel.setOnClickListener {
+                    baseBottomSheet!!.dismiss()
+                }
+            }
+
+            override fun onAttach(context: Context) {
+                super.onAttach(context)
+
+            }
+        }
+        baseBottomSheet = BaseBottomSheet()
+        baseBottomSheet!!.show(supportFragmentManager,"choose_image")
+    }
+
+
+    fun hasPermissions(context: Context?, vararg permissions: Array<String>): Boolean {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {
+            Log.e("log per", "granted 1")
+            for (permission  in permissions[0]) {
+                if (ContextCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+                    Log.e("log per", "granted 2")
+                    return false
+                }
+            }
+        }
+        return true
     }
 
     override fun onError(err: Throwable) {
